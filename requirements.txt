@@ -4,4 +4,7 @@ scikit-learn
 matplotlib
 seaborn
 yfinance
-# -e .
+plotly
+statsmodel
+keras
+-e .
