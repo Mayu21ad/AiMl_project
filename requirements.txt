@@ -7,4 +7,5 @@ yfinance
 plotly
 statsmodel
 keras
+dill
 -e .
