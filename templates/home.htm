@@ -1,0 +1,58 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The FinTech World</title>
+    </head>
+<body>
+    <div class="login">
+        <h1>Stock Price Prediction</h1>
+
+        <form action="{{ url_for('predict_datapoint') }}" method="post">
+            <h1>
+                <legend>Select Features for Stock Price Prediction</legend>
+            </h1>
+
+            <!-- Example input fields for your stock prediction features -->
+            <div class="mb-3">
+                <label class="form-label">Feature 1</label>
+                <input class="form-control" type="number" name="feature_1" placeholder="Enter feature 1" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Feature 2</label>
+                <input class="form-control" type="number" name="feature_2" placeholder="Enter feature 2" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Feature 3</label>
+                <input class="form-control" type="number" name="feature_3" placeholder="Enter feature 3" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Feature 4</label>
+                <input class="form-control" type="number" name="feature_4" placeholder="Enter feature 4" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Feature 5</label>
+                <input class="form-control" type="number" name="feature_5" placeholder="Enter feature 5" required />
+            </div>
+
+            <!-- Option to select the model type -->
+            <div class="mb-3">
+                <label class="form-label">Model Type</label>
+                <select class="form-control" name="model_type" required>
+                    <option value="pkl">Traditional Model (PKL)</option>
+                    <option value="cnn_lstm">CNN-LSTM Hybrid Model</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Predict Stock Price" required />
+            </div>
+        </form>
+        <h2>
+            The prediction is: {{ results }}
+        </h2>
+</body>
+
+</html>
